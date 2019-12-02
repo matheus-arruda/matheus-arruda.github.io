@@ -12,6 +12,9 @@
 </head>
 
 <body class="text-center bg-dark">
+
+    <div class="modal"></div>
+
   <nav class="navbar navbar-dark bg-light" style="">
     <div class="container"> <a class="navbar-brand" href="index.html">
         <b class="text-light w-75 h-75 text-center text-uppercase shadow-none"> PROCEDIMENTOS APERAM - LTQ </b>         
@@ -20,7 +23,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-8 mx-auto">
-        <h1 class="cover-heading"><b>PROCEDIMENTOS FORNO</b></h1>
+        <h1 class="cover-heading"><b>FORNO</b></h1>
       </div>
     </div>
   </div>
@@ -44,22 +47,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script>
-    $(document).ready(function() {
-$.ajax({
-    url: "https://script.google.com/macros/s/AKfycbyHxEhNQG42A4bpGWFrQroQg-tFITeZRvuCY-Y8B3PcKzArLlg/exec?action=ItensEqpmt&equipamento=Forno"
-}).then(function(data) {
-   $('.greeting-id').append(data.items);
-   $('.greeting-content').append(data);
-   for(var key in data.items) {
-   
-
-   $("#ppas").prepend('<div class="row"><div class="col-md-12"><div class="card text-center"><div class="card-body"><p class="card-text text-dark"><b>'+data.items[key].Codigo+'</b> - '+data.items[key].Nome+'</p><a href="'+data.items[key].Link+'" target="_Blanck"class="btn btn-primary">Acessar Procedimento<br></a></div> </div></div> </div>'); 
-   }
-   
-});
-});
-    </script>
+  <script src="assets/js/procedimentos.js"></script>
 </body>
 
 </html>
