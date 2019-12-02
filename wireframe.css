@@ -2098,7 +2098,7 @@ input[type="button"].btn-block {
   position: absolute;
   top: 100%;
   left: 0;
-  z-index: 1000;
+  z-index: 1000000;
   display: none;
   float: left;
   min-width: 10rem;
@@ -6454,7 +6454,7 @@ a.text-dark:hover, a.text-dark:focus {
 
 /* enquanto estiver carregando, o scroll da página estará desativado */
 body.loading {
-    overflow: hidden;   
+    
 }
 
 /* a partir do momento em que o body estiver com a classe loading,  o modal aparecerá */

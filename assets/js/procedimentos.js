@@ -13,6 +13,14 @@ $(document).ready(function() {
         window.location.href = "pesquisa.html?condicao="+condicao
     });
 
+    //Pesquisa Enter
+    $('#inpt-pesq').keydown(function (e){
+        if(e.keyCode == 13){
+            var condicao = $("#inpt-pesq").val()         
+            window.location.href = "pesquisa.html?condicao="+condicao
+        }
+    })
+
 
     if(filename == "Pesquisa") {
         let searchParams = new URLSearchParams(window.location.search)
