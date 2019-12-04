@@ -86,6 +86,7 @@ $(document).ready(function() {
 
 
     function equipamentos(filename) {
+        console.log(filename)
             //Tratar casos em que a página possui underline
     if(filename.indexOf("_")) {
         filename = filename.replace("_"," ")
