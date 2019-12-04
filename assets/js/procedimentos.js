@@ -32,7 +32,58 @@ $(document).ready(function() {
         equipamentos(filename)
     }
 
+    //Chamo a função de reconhecimento de voz
+    reconhecimento()
+
     });
+
+    function reconhecimento() {
+
+        window.SpeechRecognition = window.webkitSpeechRecognition || window.SpeechRecognition;
+        let finalTranscript = '';
+        let recognition = new window.SpeechRecognition();
+        recognition.lang = 'pt-BR';
+        recognition.interimResults = false;
+        recognition.maxAlternatives = 1;
+        recognition.continuous = true;
+        recognition.onresult = (event) => {
+          let interimTranscript = '';
+          for (let i = event.resultIndex, len = event.results.length; i < len; i++) {
+            let transcript = event.results[i][0].transcript;
+            if (event.results[i].isFinal) {
+              finalTranscript += transcript;
+            } else {
+              interimTranscript += transcript;
+            }
+          }
+          //document.querySelector('body').innerHTML = finalTranscript + '<i style="color:#ddd;">' + interimTranscript + '</>';
+          console.log(interimTranscript)
+          if(interimTranscript.indexOf("forno")) {
+            window.location.href="forno.html"; 
+          } else if(interimTranscript.indexOf("voltar")) {
+            window.location.href="index.html"; 
+          }
+        }
+        recognition.start();
+        falar("Ok, vou acessar o forno")
+    }
+
+    function falar(texto) {
+
+        const synth = window.speechSynthesis;
+        const utterance = new SpeechSynthesisUtterance();
+        utterance.voiceURI = "Google português do Brasil";
+        utterance.lang = "pt-BR";
+        utterance.rate = 1.3;
+
+        utterance.text = texto;
+        synth.speak(utterance);
+
+        console.log("Boo");
+
+    }
+
+
 
     function equipamentos(filename) {
             //Tratar casos em que a página possui underline
