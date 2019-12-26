@@ -33,7 +33,7 @@ $(document).ready(function() {
     }
 
     //Chamo a função de reconhecimento de voz
-    reconhecimento()
+    //reconhecimento()
 
     });
 
@@ -100,7 +100,10 @@ $(document).ready(function() {
 
     //Tratar casos em que a página possui traço
     if(filename.indexOf("-")) {
-        filename = filename.replace("-","/")
+        filename = filename.replace("-","/")        
+    }
+    if(filename.toUpperCase().indexOf("/") > 0) {
+        filename = filename.toUpperCase()
     }
     if(filename == "Gro") {
         filename = "GRO"
